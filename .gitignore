@@ -6,3 +6,4 @@
 !/data/db/toLoad/*
 
 docker-compose.override.yml
+/.env
