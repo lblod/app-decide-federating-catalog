@@ -74,14 +74,13 @@ services:
   #
   # LDES
   #
-  ldes-consumer-decide:
-    image: redpencil/ldes-consumer:0.12.2
+  ldes-client:
+    image: lblod/ldes-client:0.0.5
     environment:
-      REPLACE_VERSIONS: false
-      PERSIST_STATE: true
-      LDES_ENDPOINT_VIEW: "<Endpoint for first page of LDES>"
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ldes/decide-public"
-      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
-      LDES_TIMESTAMP_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
+      WORKING_GRAPH: "http://mu.semte.ch/graphs/ldes/working-graph"
+      RANDOMIZE_GRAPHS: true
+      DIRECT_DATABASE_CONNECTION: http://triplestore:8890/sparql
+      GRAPH_STORE_URL: http://triplestore:8890/sparql-graph-crud
+      CRON_PATTERN: '* 23 * * * *' # Once per hour at HH:23
     volumes:
-      - ./data/ldes-consumer/decide:/data
+      - ./config/ldes-client:/config
