@@ -71,6 +71,19 @@ services:
       - "logging=true"
     logging: *default-logging
 
+  frontend-dcat:
+    image: lblod/frontend-decide-dcat:0.0.4
+    labels:
+      - 'logging=true'
+    restart: always
+    logging: *default-logging
+  dcat:
+    image: lblod/dcat-service:0.0.1
+    logging: *default-logging
+    labels:
+      - logging=true
+    restart: always
+
   #
   # LDES
   #
