@@ -70,3 +70,18 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
+
+  #
+  # LDES
+  #
+  ldes-consumer-decide:
+    image: redpencil/ldes-consumer:0.12.2
+    environment:
+      REPLACE_VERSIONS: false
+      PERSIST_STATE: true
+      LDES_ENDPOINT_VIEW: "<Endpoint for first page of LDES>"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ldes/decide-public"
+      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
+      LDES_TIMESTAMP_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
+    volumes:
+      - ./data/ldes-consumer/decide:/data
