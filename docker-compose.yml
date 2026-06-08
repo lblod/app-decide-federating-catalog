@@ -25,10 +25,20 @@ services:
   # Your extra services here
   resource:
     image: semtech/mu-cl-resources:1.27.2
+    environment:
+      CACHE_CLEAR_PATH: 'http://cache/.mu/clear-keys'
     volumes:
       - ./config/resources:/config
     labels:
       - "logging=true"
+    logging: *default-logging
+  cache:
+    image: semtech/mu-cache:2.1.0
+    links:
+      - resource:backend
+    labels:
+      - 'logging=true'
+    restart: always
     logging: *default-logging
 
   migrations:

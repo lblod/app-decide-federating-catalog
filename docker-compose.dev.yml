@@ -27,3 +27,5 @@ services:
     restart: no
   dcat:
     restart: no
+  cache:
+    restart: "no"

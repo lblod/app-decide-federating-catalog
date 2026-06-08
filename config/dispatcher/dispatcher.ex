@@ -25,39 +25,39 @@ defmodule Dispatcher do
   # RESOURCES
   #################
   match "/datasets/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/datasets/"
+    Proxy.forward conn, path, "http://cache/datasets/"
   end
 
   match "/catalogs/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/catalogs/"
+    Proxy.forward conn, path, "http://cache/catalogs/"
   end
 
   match "/distributions/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/distributions/"
+    Proxy.forward conn, path, "http://cache/distributions/"
   end
 
   match "/catalog-records/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/catalog-records/"
+    Proxy.forward conn, path, "http://cache/catalog-records/"
   end
 
   match "/concepts/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/concepts/"
+    Proxy.forward conn, path, "http://cache/concepts/"
   end
 
   match "/concept-schemes/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/concept-schemes/"
+    Proxy.forward conn, path, "http://cache/concept-schemes/"
   end
 
   match "/agents/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/agents/"
+    Proxy.forward conn, path, "http://cache/agents/"
   end
 
   match "/formats/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/formats/"
+    Proxy.forward conn, path, "http://cache/formats/"
   end
 
   match "/pages/*path", %{ accept: [:json], layer: :resources } do
-    Proxy.forward conn, path, "http://resource/pages/"
+    Proxy.forward conn, path, "http://cache/pages/"
   end
 
   ###############
