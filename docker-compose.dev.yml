@@ -1,3 +1,7 @@
+networks:
+  debug:
+    driver: bridge
+    name: debug
 services:
   identifier:
     ports:
