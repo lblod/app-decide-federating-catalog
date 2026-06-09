@@ -2,14 +2,15 @@ defmodule Dispatcher do
   use Matcher
   define_accept_types [
     html: [ "text/html", "application/xhtml+html" ],
-    json: [ "application/json", "application/vnd.api+json" ]
+    json: [ "application/json", "application/vnd.api+json" ],
+    any: ["*/*"]
   ]
 
   @any %{}
   @json %{ accept: %{ json: true } }
   @html %{ accept: %{ html: true } }
 
-  define_layers [ :static, :services, :resources, :frontend, :not_found ]
+  define_layers [ :static, :sparql, :services, :resources, :frontend, :not_found ]
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule:
@@ -20,6 +21,13 @@ defmodule Dispatcher do
   #
   # Run `docker-compose restart dispatcher` after updating
   # this file.
+
+  #################
+  # API Services
+  #################
+  match "/api/sparql", %{ accept: [:any], layer: :sparql } do
+    Proxy.forward conn, [], "http://database:8890/sparql"
+  end
 
   #################
   # RESOURCES
