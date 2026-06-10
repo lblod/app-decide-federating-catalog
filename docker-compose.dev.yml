@@ -23,3 +23,9 @@ services:
     restart: no
   ldes-client:
     restart: no
+  frontend-dcat:
+    restart: no
+  dcat:
+    restart: no
+  cache:
+    restart: "no"
