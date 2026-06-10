@@ -29,6 +29,13 @@ defmodule Dispatcher do
     Proxy.forward conn, [], "http://database:8890/sparql"
   end
 
+  ###############################################################
+  # LDES
+  ###############################################################
+  match "/ldes/*path", %{ accept: %{any: true}, layer: :services} do
+    Proxy.forward conn, path, "http://ldes-serve-feed/"
+  end
+
   #################
   # RESOURCES
   #################
