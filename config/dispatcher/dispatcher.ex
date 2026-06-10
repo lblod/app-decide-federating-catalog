@@ -10,7 +10,7 @@ defmodule Dispatcher do
   @json %{ accept: %{ json: true } }
   @html %{ accept: %{ html: true } }
 
-  define_layers [ :static, :sparql, :services, :resources, :frontend, :not_found ]
+  define_layers [ :static, :sparql, :frontend_dcat, :services, :resources, :frontend, :not_found ]
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule:
@@ -76,14 +76,25 @@ defmodule Dispatcher do
   end
 
   ###############
-  # STATIC
+  # DCAT
   ###############
-  # dcat
-  match "/dcat/*path", %{ accept: [:any], layer: :services } do
+  # NOTE (12/06/2026): Th is rule ensures requests for the `/dcat` route that
+  # have `text/html` as accept-header are forwarded to the frontend instead of
+  # the service.  Otherwise, requests meant for the frontend are matched by the
+  # rule below and incorrectly forwarded to the service.  The prioritisation is
+  # done by the layers.
+  match "/dcat/*_path", %{ reverse_host: ["ds" | _rest], accept: %{html: true}, layer: :frontend_dcat } do
+    forward(conn, [], "http://frontend-dcat/index.html")
+  end
+
+  get "/dcat/*path", %{ accept: [:any], layer: :services } do
     forward(conn, path, "http://dcat/")
   end
 
-  match "/index.html",  %{reverse_host: ["ds" | _rest], layer: :static} do
+  ###############
+  # STATIC
+  ###############
+  match "/index.html", %{ reverse_host: ["ds" | _rest], layer: :static } do
     forward(conn, [], "http://frontend-dcat/index.html")
   end
 
