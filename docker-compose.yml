@@ -109,3 +109,32 @@ services:
       CRON_PATTERN: '* 23 * * * *' # Once per hour at HH:23
     volumes:
       - ./config/ldes-client:/config
+  ldes-delta-pusher:
+    image: redpencil/ldes-delta-pusher:1.2.14
+    environment:
+      # TODO: Is this the correct URL? It the same as used in the main app.
+      LDES_BASE: 'https://ds.decide.lblod.info/ldes/'
+      LDES_FOLDER: 'public'
+      WRITE_INITIAL_STATE: 'false'
+      DIRECT_DB_ENDPOINT: 'http://triplestore:8890/sparql'
+      AUTO_HEALING: 'true'
+      CRON_HEALING: '0 34 2 * * *' # Every day at 02:34
+    volumes:
+      - ./config/ldes-delta-pusher/:/config/
+      - ./data/ldes-feed/:/data/
+    restart: always
+    logging: *default-logging
+    labels:
+      - 'logging=true'
+    links:
+      - triplestore:database
+  ldes-serve-feed:
+    image: lblod/ldes-serve-feed-service:0.4.0
+    environment:
+      # TODO: Is this the correct URL? It the same as used in the main app.
+      BASE_URL: 'https://ds.decide.lblod.info/ldes/'
+    volumes:
+      - ./data/ldes-feed/:/data/
+    logging: *default-logging
+    labels:
+      - 'logging=true'
