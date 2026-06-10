@@ -82,7 +82,9 @@ services:
     logging: *default-logging
 
   frontend-dcat:
-    image: lblod/frontend-decide-dcat:0.0.4
+    image: lblod/frontend-decide-dcat:0.0.5
+    environment:
+      EMBER_ENABLE_SPARQL_ENDPOINT: true
     labels:
       - 'logging=true'
     restart: always
