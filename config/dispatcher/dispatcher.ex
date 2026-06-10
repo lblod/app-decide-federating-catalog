@@ -1,3 +1,6 @@
+# NOTE (08/06/2026): This is an unmodified, except for this note, default
+# config.  It will be edited when more functionality is added to the app,
+# e.g. frontends.
 defmodule Dispatcher do
   use Matcher
   define_accept_types [

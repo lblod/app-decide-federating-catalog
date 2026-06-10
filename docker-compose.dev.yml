@@ -1,9 +1,25 @@
+networks:
+  debug:
+    driver: bridge
+    name: debug
 services:
   identifier:
     ports:
       - "80:80"
     restart: no
+  dispatcher:
+    restart: no
+  resource:
+    restart: no
+  migrations:
+    restart: no
+  delta-notifier:
+    restart: no
+  database:
+    restart: no
   triplestore:
     ports:
       - "8890:8890"
+    restart: no
+  ldes-client:
     restart: no
