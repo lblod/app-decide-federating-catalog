@@ -61,7 +61,7 @@ services:
     logging: *default-logging
 
   triplestore:
-    image: redpencil/virtuoso:1.4.0
+    image: redpencil/virtuoso:1.3.0
     environment:
       SPARQL_UPDATE: "true"
     volumes:
@@ -70,17 +70,3 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
-
-  #
-  # LDES
-  #
-  ldes-client:
-    image: lblod/ldes-client:0.0.5
-    environment:
-      WORKING_GRAPH: "http://mu.semte.ch/graphs/ldes/working-graph"
-      RANDOMIZE_GRAPHS: true
-      DIRECT_DATABASE_CONNECTION: http://triplestore:8890/sparql
-      GRAPH_STORE_URL: http://triplestore:8890/sparql-graph-crud
-      CRON_PATTERN: '* 23 * * * *' # Once per hour at HH:23
-    volumes:
-      - ./config/ldes-client:/config

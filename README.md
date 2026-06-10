@@ -1,57 +1,30 @@
-# DECIDe Federating Catalog
+# mu-project
 
-This app provides a Federated Catalog for a data space.  The members of a data space each publish meta data on the catalogues and data sets they have.  This app consumes that meta data and publishes a combined overview that users can search for data sets they are interested in.
+Bootstrap a mu.semte.ch microservices environment in three easy steps.
 
-This app relies on LDES to retrieve data from data space members.  Furthermore, data space members should use DCAT to describe their data set meta data.  The obtained meta data is combined and republished using LDES.  In addition a frontend is available oriented at human users as well as a SPARQL endpoint.
+## Quickstart an mu-project
 
-![Overview of the app](./doc/app-overview.jpg)
+> [INFO]
+> This project was created by running `mu project new awesome-project-name`.  If read on GitHub under mu-semtech/mu-project then it is the template repository for a new project, use `mu project new` instead.
 
+Setting up your environment is done in three easy steps:
+1. First configure the running microservices and their names in `docker-compose.yml`
+2. Then, configure how requests are dispatched in `config/dispatcher.ex`
+3. Lastly, simply start the docker-compose.
 
-## What's included
+### Hooking things up with docker-compose
 
-This repository contains multiple docker-compose files
+Alter the `docker-compose.yml` file so it contains all microservices you need.  The example content should be clear, but you can find more information in the [Docker Compose documentation](https://docs.docker.com/compose/).  Don't remove the `identifier` and `db` container, they are respectively the entry-point and the database of your application.  Don't forget to link the necessary microservices to the dispatcher and the database to the microservices.
 
-- _docker-compose.yml_ This provides you with the backend components.
-- _docker-compose.dev.yml_ Provides changes for a good frontend development setup.
-  - publishes the backend services on port 80 directly.
-  - publishes the database instance on port 8890 so you can easily query this
+### Configure the dispatcher
 
+Next, alter the file `config/dispatcher/dispatcher.ex` based on the example that is there by default.  Dispatch requests to the necessary microservices based on the names you used for the microservice.
 
-## Running and maintaining
+### Boot up the system
 
-General information on running and maintaining an installation.
+Boot your microservices-enabled system using docker-compose.
 
+    cd /path/to/mu-project
+    docker-compose up
 
-### Getting started
-
-1. Clone the repository and go into the directory
-2. To ease all typing for `docker compose` commands create a compose override file in the root of the project
-
-```bash
-touch docker-compose.override.yml
-```
-
-3. Create an `.env` file so we can define the compose files and other environment variables
-
-```bash
-touch .env
-```
-
-4. Set the `COMPOSE_FILE` in the `.env`
-
-```bash
-COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml:docker-compose.override.yml
-```
-
-
-### Running the stack
-This should be your go-to way of starting the stack.
-
-```bash
-docker compose up -d # run without -d flag when you don't want to run it in the background
-```
-
-
-## LDES
-
-This app obtains its data from multiple LDES feeds.  For each individual feed a separate LDES consumer is requirement.  To obtain data from the feeds, make sure to configure the `LDES_ENDPOINT_VIEW` for each feed in your `docker-compose.override.yml` file.
+You can shut down using `docker-compose stop` and remove everything using `docker-compose rm`.
