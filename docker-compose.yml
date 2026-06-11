@@ -112,8 +112,8 @@ services:
   ldes-delta-pusher:
     image: redpencil/ldes-delta-pusher:1.2.14
     environment:
-      # TODO: Is this the correct URL? It the same as used in the main app.
-      LDES_BASE: 'https://ds.decide.lblod.info/ldes/'
+      # TODO: We will determine a URL before deploying this app on a server.
+      LDES_BASE: 'TO-BE-DETERMINED'
       LDES_FOLDER: 'public'
       WRITE_INITIAL_STATE: 'false'
       DIRECT_DB_ENDPOINT: 'http://triplestore:8890/sparql'
@@ -131,8 +131,8 @@ services:
   ldes-serve-feed:
     image: lblod/ldes-serve-feed-service:0.4.0
     environment:
-      # TODO: Is this the correct URL? It the same as used in the main app.
-      BASE_URL: 'https://ds.decide.lblod.info/ldes/'
+      # TODO: We will determine a URL before deploying this app on a server.
+      BASE_URL: 'TO-BE-DETERMINED'
     volumes:
       - ./data/ldes-feed/:/data/
     logging: *default-logging
