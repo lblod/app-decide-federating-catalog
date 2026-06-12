@@ -16,7 +16,8 @@ export const GRAPH_FILTER = `
 
 // NOTE (10/06/2026): Not all interesting resources have a triple for this
 // predicate already.  It is up to the data producer to add it when updating an
-// existing resource, otherwise the changes will not be picked up.
+// existing resource.  The healing process will not detect changes for resources
+// without a HEALING_PREDICATE.
 const HEALING_PREDICATE = "http://purl.org/dc/terms/modified";
 
 // NOTE (11/06/2026): These type definitions allow the language-server to
