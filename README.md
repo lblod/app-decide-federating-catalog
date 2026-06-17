@@ -54,7 +54,10 @@ docker compose up -d # run without -d flag when you don't want to run it in the 
 
 ## LDES
 
-This app obtains its data from multiple LDES feeds.  For each individual feed a separate LDES consumer is requirement.  To obtain data from the feeds, make sure to configure the `LDES_ENDPOINT_VIEW` for each feed in your `docker-compose.override.yml` file.
+This app uses the [ldes-client](https://github.com/lblod/ldes-client) service to obtain its data from multiple LDES feeds.  These feeds are configured in the [configuration file](./config/ldes-client/config.ts) for the LDES client service.  After editing this configuration `docker compose restart ldes-client` for the changes to take effect.  If you enabled development mode for the `ldes-client` service, any changes will be picked up automatically by the live reload functionality.
+
+It is possible that the exact URL of a consumed feed depends on which environment an app instance is deployed in.  For example, a development instance likely consumes data from other development apps, whereas a production instance consumes from other production apps.  To support this, one can define the environment variables for a feed's `LDES_BASE` and `FIRST_PAGE`.  These environment variables can be set as usual in the configuration for docker compose.  In the `config.ts` file, `process.env.SOME_ENV_VAR` can be used to get the value of the `SOME_ENV_VAR`.  The configuration for the `decide-public` endpoint illustrates this approach.
+
 
 The produced LDES feed, by default, uses as base URL `https://catalog.decide.lblod.info/ldes/`.  To change this to another URL, set the following two environment variables to that value:
 
