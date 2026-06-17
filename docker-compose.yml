@@ -1,5 +1,4 @@
-x-logging:
-  &default-logging
+x-logging: &default-logging
   driver: "json-file"
   options:
     max-size: "10m"
@@ -26,7 +25,7 @@ services:
   resource:
     image: semtech/mu-cl-resources:1.27.2
     environment:
-      CACHE_CLEAR_PATH: 'http://cache/.mu/clear-keys'
+      CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
       - ./config/resources:/config
     labels:
@@ -37,7 +36,7 @@ services:
     links:
       - resource:backend
     labels:
-      - 'logging=true'
+      - "logging=true"
     restart: always
     logging: *default-logging
 
@@ -86,7 +85,7 @@ services:
     environment:
       EMBER_ENABLE_SPARQL_ENDPOINT: true
     labels:
-      - 'logging=true'
+      - "logging=true"
     restart: always
     logging: *default-logging
   dcat:
@@ -106,7 +105,7 @@ services:
       RANDOMIZE_GRAPHS: true
       DIRECT_DATABASE_CONNECTION: http://triplestore:8890/sparql
       GRAPH_STORE_URL: http://triplestore:8890/sparql-graph-crud
-      CRON_PATTERN: '* 23 * * * *' # Once per hour at HH:23
+      CRON_PATTERN: "* 23 * * * *" # Once per hour at HH:23
     volumes:
       - ./config/ldes-client:/config
   ldes-delta-pusher:
@@ -114,18 +113,18 @@ services:
     environment:
       # TODO: We will determine a URL before deploying this app on a server.
       LDES_BASE: 'TO-BE-DETERMINED'
-      LDES_FOLDER: 'public'
-      WRITE_INITIAL_STATE: 'false'
-      DIRECT_DB_ENDPOINT: 'http://triplestore:8890/sparql'
-      AUTO_HEALING: 'true'
-      CRON_HEALING: '0 34 2 * * *' # Every day at 02:34
+      LDES_FOLDER: "public"
+      WRITE_INITIAL_STATE: "false"
+      DIRECT_DB_ENDPOINT: "http://triplestore:8890/sparql"
+      AUTO_HEALING: "true"
+      CRON_HEALING: "0 34 2 * * *" # Every day at 02:34
     volumes:
       - ./config/ldes-delta-pusher/:/config/
       - ./data/ldes-feed/:/data/
     restart: always
     logging: *default-logging
     labels:
-      - 'logging=true'
+      - "logging=true"
     links:
       - triplestore:database
   ldes-serve-feed:
@@ -137,4 +136,4 @@ services:
       - ./data/ldes-feed/:/data/
     logging: *default-logging
     labels:
-      - 'logging=true'
+      - "logging=true"
