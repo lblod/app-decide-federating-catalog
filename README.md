@@ -55,3 +55,8 @@ docker compose up -d # run without -d flag when you don't want to run it in the 
 ## LDES
 
 This app obtains its data from multiple LDES feeds.  For each individual feed a separate LDES consumer is requirement.  To obtain data from the feeds, make sure to configure the `LDES_ENDPOINT_VIEW` for each feed in your `docker-compose.override.yml` file.
+
+The produced LDES feed, by default, uses as base URL `https://catalog.decide.lblod.info/ldes/`.  To change this to another URL, set the following two environment variables to that value:
+
+- `LDES_BASE` for the `ldes-delta-pusher` service
+- `BASE_URL` for the `ldes-serve-feed` service
