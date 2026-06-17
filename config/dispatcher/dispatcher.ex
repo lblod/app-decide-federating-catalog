@@ -83,7 +83,7 @@ defmodule Dispatcher do
   # the service.  Otherwise, requests meant for the frontend are matched by the
   # rule below and incorrectly forwarded to the service.  The prioritisation is
   # done by the layers.
-  match "/dcat/*_path", %{ reverse_host: ["ds" | _rest], accept: %{html: true}, layer: :frontend_dcat } do
+  match "/dcat/*_path", %{ reverse_host: ["catalog" | _rest], accept: %{html: true}, layer: :frontend_dcat } do
     forward(conn, [], "http://frontend-dcat/index.html")
   end
 
@@ -94,11 +94,11 @@ defmodule Dispatcher do
   ###############
   # STATIC
   ###############
-  match "/index.html", %{ reverse_host: ["ds" | _rest], layer: :static } do
+  match "/index.html", %{ reverse_host: ["catalog" | _rest], layer: :static } do
     forward(conn, [], "http://frontend-dcat/index.html")
   end
 
-  get "/assets/*path", %{reverse_host: ["ds" | _rest], layer: :static} do
+  get "/assets/*path", %{reverse_host: ["catalog" | _rest], layer: :static} do
     forward(conn, path, "http://frontend-dcat/assets/")
   end
 
@@ -109,7 +109,7 @@ defmodule Dispatcher do
   #################
   # Frontends
   #################
-  match "/*_path", %{reverse_host: ["ds" | _rest], accept: %{html: true}, layer: :frontend} do
+  match "/*_path", %{reverse_host: ["catalog" | _rest], accept: %{html: true}, layer: :frontend} do
     forward(conn, [], "http://frontend-dcat/index.html")
   end
 
