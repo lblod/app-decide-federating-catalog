@@ -9,6 +9,8 @@ const config = {
       BATCH_GRAPH: "http://mu.semte.ch/graphs/ldes/decide-public-batch",
     },
     // TODO: Configure other endpoints when available
+    // See `config/authorization/config.lisp` for the intended target graphs per
+    // partner.
   ],
 };
 
