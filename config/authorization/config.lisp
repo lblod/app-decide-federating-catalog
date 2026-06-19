@@ -59,40 +59,38 @@
   ("dct:MediaTypeOrExtent" -> _)
   ("cms:Page" -> _))
 
-;; NOTE (08/06/2026): The following are placeholder for intended graphs for the data consumed from
-;; the partner LDES.
-;; (define-graph ldes-bamberg ("http://mu.semte.ch/graphs/ldes/bamberg")
-;;   ("dcat:Catalog" -> _)
-;;   ("dcat:Dataset" -> _)
-;;   ("dcat:Distribution" -> _)
-;;   ("dcat:CatalogRecord" -> _)
-;;   ("skos:Concept" -> _)
-;;   ("skos:ConceptScheme" -> _)
-;;   ("foaf:Agent" -> _)
-;;   ("dct:MediaTypeOrExtent" -> _)
-;;   ("cms:Page" -> _))
+(define-graph ldes-bamberg ("http://mu.semte.ch/graphs/ldes/bamberg")
+  ("dcat:Catalog" -> _)
+  ("dcat:Dataset" -> _)
+  ("dcat:Distribution" -> _)
+  ("dcat:CatalogRecord" -> _)
+  ("skos:Concept" -> _)
+  ("skos:ConceptScheme" -> _)
+  ("foaf:Agent" -> _)
+  ("dct:MediaTypeOrExtent" -> _)
+  ("cms:Page" -> _))
 
-;; (define-graph ldes-freiburg ("http://mu.semte.ch/graphs/ldes/freiburg")
-;;   ("dcat:Catalog" -> _)
-;;   ("dcat:Dataset" -> _)
-;;   ("dcat:Distribution" -> _)
-;;   ("dcat:CatalogRecord" -> _)
-;;   ("skos:Concept" -> _)
-;;   ("skos:ConceptScheme" -> _)
-;;   ("foaf:Agent" -> _)
-;;   ("dct:MediaTypeOrExtent" -> _)
-;;   ("cms:Page" -> _))
+(define-graph ldes-freiburg ("http://mu.semte.ch/graphs/ldes/freiburg")
+  ("dcat:Catalog" -> _)
+  ("dcat:Dataset" -> _)
+  ("dcat:Distribution" -> _)
+  ("dcat:CatalogRecord" -> _)
+  ("skos:Concept" -> _)
+  ("skos:ConceptScheme" -> _)
+  ("foaf:Agent" -> _)
+  ("dct:MediaTypeOrExtent" -> _)
+  ("cms:Page" -> _))
 
-;; (define-graph ldes-ghent ("http://mu.semte.ch/graphs/ldes/ghent")
-;;   ("dcat:Catalog" -> _)
-;;   ("dcat:Dataset" -> _)
-;;   ("dcat:Distribution" -> _)
-;;   ("dcat:CatalogRecord" -> _)
-;;   ("skos:Concept" -> _)
-;;   ("skos:ConceptScheme" -> _)
-;;   ("foaf:Agent" -> _)
-;;   ("dct:MediaTypeOrExtent" -> _)
-;;   ("cms:Page" -> _))
+(define-graph ldes-ghent ("http://mu.semte.ch/graphs/ldes/ghent")
+  ("dcat:Catalog" -> _)
+  ("dcat:Dataset" -> _)
+  ("dcat:Distribution" -> _)
+  ("dcat:CatalogRecord" -> _)
+  ("skos:Concept" -> _)
+  ("skos:ConceptScheme" -> _)
+  ("foaf:Agent" -> _)
+  ("dct:MediaTypeOrExtent" -> _)
+  ("cms:Page" -> _))
 
 
 ;;;;;;;;;;;;;
@@ -108,14 +106,14 @@
        :to-graph ldes-public
        :for-allowed-group "public")
 
-;; (grant (read)
-;;        :to-graph ldes-bamberg
-;;        :for-allowed-group "public")
+(grant (read)
+       :to-graph ldes-bamberg
+       :for-allowed-group "public")
 
-;; (grant (read)
-;;        :to-graph ldes-freiburg
-;;        :for-allowed-group "public")
+(grant (read)
+       :to-graph ldes-freiburg
+       :for-allowed-group "public")
 
-;; (grant (read)
-;;        :to-graph ldes-ghent
-;;        :for-allowed-group "public")
+(grant (read)
+       :to-graph ldes-ghent
+       :for-allowed-group "public")
