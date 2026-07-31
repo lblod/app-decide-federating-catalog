@@ -81,7 +81,7 @@ services:
     logging: *default-logging
 
   frontend-dcat:
-    image: lblod/frontend-decide-dcat:0.0.5
+    image: lblod/frontend-decide-dcat:0.0.6
     environment:
       EMBER_ENABLE_SPARQL_ENDPOINT: true
     labels:
@@ -89,7 +89,7 @@ services:
     restart: always
     logging: *default-logging
   dcat:
-    image: lblod/dcat-service:0.0.1
+    image: lblod/dcat-service:0.0.3
     logging: *default-logging
     labels:
       - logging=true
