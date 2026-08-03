@@ -57,6 +57,46 @@ export const streams: LdesConfig = {
       graphFilter: GRAPH_FILTER,
       healingPredicates: [HEALING_PREDICATE],
     },
+    "http://www.w3.org/ns/odrl/2/Offer": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "https://schema.org/Offer": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "https://schema.org/HowTo": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/Set": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/Permission": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/Prohibition": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/Party": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/PartyCollection": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/AssetCollection": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
+    "http://www.w3.org/ns/odrl/2/Asset": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
     "http://xmlns.com/foaf/0.1/Agent": {
       graphFilter: GRAPH_FILTER,
       filter: `
