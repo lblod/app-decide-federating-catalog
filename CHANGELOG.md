@@ -1,5 +1,6 @@
 # Changelog
 ## Unreleased
+- Bump DCAT frontend to latest version (see [PR](https://github.com/lblod/frontend-decide-dcat/pull/3))
 
 ## v0.0.4 (2026-07-31)
 - Bump DCAT service and frontend to latest versions
