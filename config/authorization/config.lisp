@@ -51,7 +51,7 @@
 ;;;;;;;;;
 ;; Graphs
 
-(define-graph ldes-public ("http://mu.semte.ch/graphs/ldes/decide-public")
+(define-graph abb-ldes-public ("http://mu.semte.ch/graphs/ldes/abb/public")
   ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
@@ -170,7 +170,7 @@
 ;; Grants
 
 (grant (read)
-       :to-graph ldes-public
+       :to-graph abb-ldes-public
        :for-allowed-group "public")
 
 (grant (read)

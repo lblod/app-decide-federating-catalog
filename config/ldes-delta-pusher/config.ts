@@ -1,6 +1,6 @@
 import { sparqlEscapeUri } from "mu";
 
-const PUBLIC_GRAPH = "http://mu.semte.ch/graphs/ldes/decide-public";
+const ABB_GRAPH = "http://mu.semte.ch/graphs/ldes/abb/public";
 // NOTE (10/06/2026): Same placeholders as used in sparql-parser configuration
 const BAMBERG_GRAPH = "http://mu.semte.ch/graphs/ldes/bamberg";
 const FREIBURG_GRAPH = "http://mu.semte.ch/graphs/ldes/freiburg";
@@ -8,7 +8,7 @@ const GHENT_GRAPH = "http://mu.semte.ch/graphs/ldes/ghent";
 
 export const GRAPH_FILTER = `
   VALUES ?g {
-    ${sparqlEscapeUri(PUBLIC_GRAPH)}
+    ${sparqlEscapeUri(ABB_GRAPH)}
     ${sparqlEscapeUri(BAMBERG_GRAPH)}
     ${sparqlEscapeUri(FREIBURG_GRAPH)}
     ${sparqlEscapeUri(GHENT_GRAPH)}

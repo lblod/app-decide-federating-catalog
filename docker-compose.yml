@@ -106,9 +106,9 @@ services:
       DIRECT_DATABASE_CONNECTION: http://triplestore:8890/sparql
       GRAPH_STORE_URL: http://triplestore:8890/sparql-graph-crud
       CRON_PATTERN: "* 23 * * * *" # Once per hour at HH:23
-      # By default consume feed form DECIDe TEST
-      DECIDE_LDES_BASE: "https://ds.decide.lblod.info/ldes/public/"
-      DECIDE_LDES_FIRST_PAGE: "https://ds.decide.lblod.info/ldes/public/1"
+      # ABB feed (DECIDe TEST)
+      ABB_LDES_BASE: "https://ds.decide.lblod.info/ldes/public/"
+      ABB_LDES_FIRST_PAGE: "https://ds.decide.lblod.info/ldes/public/1"
     volumes:
       - ./config/ldes-client:/config
   ldes-delta-pusher:
