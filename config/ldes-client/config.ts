@@ -8,9 +8,6 @@ const config = {
       TARGET_GRAPH: "http://mu.semte.ch/graphs/ldes/abb/public",
       BATCH_GRAPH: "http://mu.semte.ch/graphs/ldes/abb/public-batch",
     },
-    // TODO: Configure other endpoints when available
-    // See `config/authorization/config.lisp` for the intended target graphs per
-    // partner.
     {
       name: "freiburg-public",
       LDES_BASE: process.env.FREIBURG_LDES_BASE,
@@ -27,6 +24,15 @@ const config = {
       TARGET_GRAPH: "http://mu.semte.ch/graphs/ldes/bamberg/public",
       BATCH_GRAPH: "http://mu.semte.ch/graphs/ldes/bamberg/public-batch",
     },
+    // TODO: Uncomment when LDES is configured in docker-compose.yml
+    // {
+    //   name: "ghent-public",
+    //   LDES_BASE: process.env.GHENT_LDES_BASE,
+    //   FIRST_PAGE: process.env.GHENT_LDES_FIRST_PAGE,
+    //   STATUS_GRAPH: "http://mu.semte.ch/graphs/ldes/ghent/public-status",
+    //   TARGET_GRAPH: "http://mu.semte.ch/graphs/ldes/ghent/public",
+    //   BATCH_GRAPH: "http://mu.semte.ch/graphs/ldes/ghent/public-batch",
+    // },
   ],
 };
 

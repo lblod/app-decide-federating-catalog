@@ -115,6 +115,9 @@ services:
       # Bamberg feed
       BAMBERG_LDES_BASE: "https://ds.decide.smartcitybamberg.de/ldes/public/"
       BAMBERG_LDES_FIRST_PAGE: "https://ds.decide.smartcitybamberg.de/ldes/public/1"
+      # Ghent feed
+      # GHENT_LDES_BASE: TODO
+      # GHENT_LDES_FIRST_PAGE: TODO
     volumes:
       - ./config/ldes-client:/config
   ldes-delta-pusher:
