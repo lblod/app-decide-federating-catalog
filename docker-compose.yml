@@ -112,6 +112,9 @@ services:
       # Freiburg feed
       FREIBURG_LDES_BASE: "https://decide.datenraum-dev.freiburg.de/ldes/public/"
       FREIBURG_LDES_FIRST_PAGE: "https://decide.datenraum-dev.freiburg.de/ldes/public/1"
+      # Bamberg feed
+      BAMBERG_LDES_BASE: "https://ds.decide.smartcitybamberg.de/ldes/public/"
+      BAMBERG_LDES_FIRST_PAGE: "https://ds.decide.smartcitybamberg.de/ldes/public/1"
     volumes:
       - ./config/ldes-client:/config
   ldes-delta-pusher:
