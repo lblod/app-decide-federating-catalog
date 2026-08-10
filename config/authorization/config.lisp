@@ -78,7 +78,7 @@
   ("sh:NodeShape" -> _)
   ("sh:PropertyShape" -> _))
 
-(define-graph ldes-bamberg ("http://mu.semte.ch/graphs/ldes/bamberg")
+(define-graph bamberg-ldes-public ("http://mu.semte.ch/graphs/ldes/bamberg/public")
   ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
@@ -105,7 +105,7 @@
   ("sh:NodeShape" -> _)
   ("sh:PropertyShape" -> _))
 
-(define-graph ldes-freiburg ("http://mu.semte.ch/graphs/ldes/freiburg")
+(define-graph freiburg-ldes-public ("http://mu.semte.ch/graphs/ldes/freiburg/public")
   ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
@@ -132,7 +132,7 @@
   ("sh:NodeShape" -> _)
   ("sh:PropertyShape" -> _))
 
-(define-graph ldes-ghent ("http://mu.semte.ch/graphs/ldes/ghent")
+(define-graph ghent-ldes-public ("http://mu.semte.ch/graphs/ldes/ghent/public")
   ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
@@ -174,13 +174,13 @@
        :for-allowed-group "public")
 
 (grant (read)
-       :to-graph ldes-bamberg
+       :to-graph bamberg-ldes-public
        :for-allowed-group "public")
 
 (grant (read)
-       :to-graph ldes-freiburg
+       :to-graph freiburg-ldes-public
        :for-allowed-group "public")
 
 (grant (read)
-       :to-graph ldes-ghent
+       :to-graph ghent-ldes-public
        :for-allowed-group "public")

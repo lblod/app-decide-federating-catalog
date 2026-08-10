@@ -2,9 +2,9 @@ import { sparqlEscapeUri } from "mu";
 
 const ABB_GRAPH = "http://mu.semte.ch/graphs/ldes/abb/public";
 // NOTE (10/06/2026): Same placeholders as used in sparql-parser configuration
-const BAMBERG_GRAPH = "http://mu.semte.ch/graphs/ldes/bamberg";
-const FREIBURG_GRAPH = "http://mu.semte.ch/graphs/ldes/freiburg";
-const GHENT_GRAPH = "http://mu.semte.ch/graphs/ldes/ghent";
+const BAMBERG_GRAPH = "http://mu.semte.ch/graphs/ldes/bamberg/public";
+const FREIBURG_GRAPH = "http://mu.semte.ch/graphs/ldes/freiburg/public";
+const GHENT_GRAPH = "http://mu.semte.ch/graphs/ldes/ghent/public";
 
 export const GRAPH_FILTER = `
   VALUES ?g {
