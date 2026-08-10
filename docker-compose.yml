@@ -109,6 +109,9 @@ services:
       # ABB feed (DECIDe TEST)
       ABB_LDES_BASE: "https://ds.decide.lblod.info/ldes/public/"
       ABB_LDES_FIRST_PAGE: "https://ds.decide.lblod.info/ldes/public/1"
+      # Freiburg feed
+      FREIBURG_LDES_BASE: "https://decide.datenraum-dev.freiburg.de/ldes/public/"
+      FREIBURG_LDES_FIRST_PAGE: "https://decide.datenraum-dev.freiburg.de/ldes/public/1"
     volumes:
       - ./config/ldes-client:/config
   ldes-delta-pusher:
