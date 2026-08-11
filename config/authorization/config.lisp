@@ -42,6 +42,8 @@
   :dcat "http://www.w3.org/ns/dcat#"
   :dct "http://purl.org/dc/terms/"
   :foaf "http://xmlns.com/foaf/0.1/"
+  :odrl "http://www.w3.org/ns/odrl/2/"
+  :schema "https://schema.org/"
   :skos "http://www.w3.org/2004/02/skos/core#")
 
 
@@ -49,6 +51,7 @@
 ;; Graphs
 
 (define-graph ldes-public ("http://mu.semte.ch/graphs/ldes/decide-public")
+  ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
   ("dcat:Distribution" -> _)
@@ -58,9 +61,21 @@
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
   ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _))
+  ("cms:Page" -> _)
+  ;; ODRL Offers and authorisation policy
+  ("odrl:Asset" -> _)
+  ("odrl:AssetCollection" -> _)
+  ("odrl:Offer" -> _)
+  ("odrl:Party" -> _)
+  ("odrl:PartyCollection" -> _)
+  ("odrl:Permission" -> _)
+  ("odrl:Prohibition" -> _)
+  ("odrl:Set" -> _)
+  ("schema:Offer" -> _)
+  ("schema:HowTo" -> _))
 
 (define-graph ldes-bamberg ("http://mu.semte.ch/graphs/ldes/bamberg")
+  ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
   ("dcat:Distribution" -> _)
@@ -70,7 +85,18 @@
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
   ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _))
+  ("cms:Page" -> _)
+  ;; ODRL Offers and authorisation policy
+  ("odrl:Asset" -> _)
+  ("odrl:AssetCollection" -> _)
+  ("odrl:Offer" -> _)
+  ("odrl:Party" -> _)
+  ("odrl:PartyCollection" -> _)
+  ("odrl:Permission" -> _)
+  ("odrl:Prohibition" -> _)
+  ("odrl:Set" -> _)
+  ("schema:Offer" -> _)
+  ("schema:HowTo" -> _))
 
 (define-graph ldes-freiburg ("http://mu.semte.ch/graphs/ldes/freiburg")
   ("dcat:Catalog" -> _)
@@ -82,7 +108,18 @@
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
   ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _))
+  ("cms:Page" -> _)
+  ;; ODRL Offers and authorisation policy
+  ("odrl:Asset" -> _)
+  ("odrl:AssetCollection" -> _)
+  ("odrl:Offer" -> _)
+  ("odrl:Party" -> _)
+  ("odrl:PartyCollection" -> _)
+  ("odrl:Permission" -> _)
+  ("odrl:Prohibition" -> _)
+  ("odrl:Set" -> _)
+  ("schema:Offer" -> _)
+  ("schema:HowTo" -> _))
 
 (define-graph ldes-ghent ("http://mu.semte.ch/graphs/ldes/ghent")
   ("dcat:Catalog" -> _)
@@ -94,7 +131,18 @@
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
   ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _))
+  ("cms:Page" -> _)
+  ;; ODRL Offers and authorisation policy
+  ("odrl:Asset" -> _)
+  ("odrl:AssetCollection" -> _)
+  ("odrl:Offer" -> _)
+  ("odrl:Party" -> _)
+  ("odrl:PartyCollection" -> _)
+  ("odrl:Permission" -> _)
+  ("odrl:Prohibition" -> _)
+  ("odrl:Set" -> _)
+  ("schema:Offer" -> _)
+  ("schema:HowTo" -> _))
 
 
 ;;;;;;;;;;;;;
