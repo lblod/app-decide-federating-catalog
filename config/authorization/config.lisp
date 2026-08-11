@@ -44,6 +44,7 @@
   :foaf "http://xmlns.com/foaf/0.1/"
   :odrl "http://www.w3.org/ns/odrl/2/"
   :schema "https://schema.org/"
+  :sh "http://www.w3.org/ns/shacl#"
   :skos "http://www.w3.org/2004/02/skos/core#")
 
 
@@ -72,7 +73,10 @@
   ("odrl:Prohibition" -> _)
   ("odrl:Set" -> _)
   ("schema:Offer" -> _)
-  ("schema:HowTo" -> _))
+  ("schema:HowTo" -> _)
+  ;; SHACL shapes
+  ("sh:NodeShape" -> _)
+  ("sh:PropertyShape" -> _))
 
 (define-graph ldes-bamberg ("http://mu.semte.ch/graphs/ldes/bamberg")
   ;; DCAT data
@@ -96,9 +100,13 @@
   ("odrl:Prohibition" -> _)
   ("odrl:Set" -> _)
   ("schema:Offer" -> _)
-  ("schema:HowTo" -> _))
+  ("schema:HowTo" -> _)
+  ;; SHACL shapes
+  ("sh:NodeShape" -> _)
+  ("sh:PropertyShape" -> _))
 
 (define-graph ldes-freiburg ("http://mu.semte.ch/graphs/ldes/freiburg")
+  ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
   ("dcat:Distribution" -> _)
@@ -119,9 +127,13 @@
   ("odrl:Prohibition" -> _)
   ("odrl:Set" -> _)
   ("schema:Offer" -> _)
-  ("schema:HowTo" -> _))
+  ("schema:HowTo" -> _)
+  ;; SHACL shapes
+  ("sh:NodeShape" -> _)
+  ("sh:PropertyShape" -> _))
 
 (define-graph ldes-ghent ("http://mu.semte.ch/graphs/ldes/ghent")
+  ;; DCAT data
   ("dcat:Catalog" -> _)
   ("dcat:Dataset" -> _)
   ("dcat:Distribution" -> _)
@@ -142,7 +154,10 @@
   ("odrl:Prohibition" -> _)
   ("odrl:Set" -> _)
   ("schema:Offer" -> _)
-  ("schema:HowTo" -> _))
+  ("schema:HowTo" -> _)
+  ;; SHACL shapes
+  ("sh:NodeShape" -> _)
+  ("sh:PropertyShape" -> _))
 
 
 ;;;;;;;;;;;;;
