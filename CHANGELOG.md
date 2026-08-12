@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+
+## v0.0.5 (2026-08-12)
 - Bump DCAT frontend to latest version (see [PR](https://github.com/lblod/frontend-decide-dcat/pull/3))
 - [#8](https://github.com/lblod/app-decide-federating-catalog/pull/8) republish received SHACL shapes
 - [#7](https://github.com/lblod/app-decide-federating-catalog/pull/7) Republish ODRL Offers linked to datasets
