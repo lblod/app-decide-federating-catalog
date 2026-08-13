@@ -1,5 +1,6 @@
 # Changelog
 ## Unreleased
+- [#10](https://github.com/lblod/app-decide-federating-catalog/pull/10) Add DCAT Data Service resource
 
 ## v0.0.6 (2026-08-13)
 - Bump DCAT frontend to latest version (see [PR](https://github.com/lblod/frontend-decide-dcat/pull/4))
