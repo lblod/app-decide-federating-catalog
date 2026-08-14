@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+
+## v0.0.7 (2026-08-14)
 - [#10](https://github.com/lblod/app-decide-federating-catalog/pull/10) Add DCAT Data Service resource
 
 ## v0.0.6 (2026-08-13)
