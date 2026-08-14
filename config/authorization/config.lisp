@@ -38,7 +38,6 @@
   :session "http://mu.semte.ch/vocabularies/session/"
   :ext "http://mu.semte.ch/vocabularies/ext/"
   ;; App
-  :cms "http://mu.semte.ch/vocabulary/cms/"
   :dcat "http://www.w3.org/ns/dcat#"
   :dct "http://purl.org/dc/terms/"
   :foaf "http://xmlns.com/foaf/0.1/"
@@ -61,8 +60,6 @@
   ("skos:Concept" -> _)
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
-  ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _)
   ;; ODRL Offers and authorisation policy
   ("odrl:Asset" -> _)
   ("odrl:AssetCollection" -> _)
@@ -88,8 +85,6 @@
   ("skos:Concept" -> _)
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
-  ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _)
   ;; ODRL Offers and authorisation policy
   ("odrl:Asset" -> _)
   ("odrl:AssetCollection" -> _)
@@ -115,8 +110,6 @@
   ("skos:Concept" -> _)
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
-  ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _)
   ;; ODRL Offers and authorisation policy
   ("odrl:Asset" -> _)
   ("odrl:AssetCollection" -> _)
@@ -142,8 +135,6 @@
   ("skos:Concept" -> _)
   ("skos:ConceptScheme" -> _)
   ("foaf:Agent" -> _)
-  ("dct:MediaTypeOrExtent" -> _)
-  ("cms:Page" -> _)
   ;; ODRL Offers and authorisation policy
   ("odrl:Asset" -> _)
   ("odrl:AssetCollection" -> _)
