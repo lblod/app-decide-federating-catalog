@@ -120,6 +120,10 @@ services:
       # GHENT_LDES_FIRST_PAGE: TODO
     volumes:
       - ./config/ldes-client:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   ldes-delta-pusher:
     image: redpencil/ldes-delta-pusher:1.2.14
     environment:
