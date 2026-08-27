@@ -1,5 +1,6 @@
 # Changelog
 ## Unreleased
+- [#11](https://github.com/lblod/app-decide-federating-catalog/pull/11) republish tombstone resources
 
 ## v0.0.8 (2026-08-20)
 - Bump DCAT frontend to v0.0.11
