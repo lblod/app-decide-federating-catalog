@@ -38,6 +38,10 @@ type LdesConfig = {
 
 export const streams: LdesConfig = {
   public: {
+    "http://www.w3.org/ns/activitystreams#Tombstone": {
+      graphFilter: GRAPH_FILTER,
+      healingPredicates: [HEALING_PREDICATE],
+    },
     "http://www.w3.org/ns/dcat#Catalog": {
       graphFilter: GRAPH_FILTER,
       healingPredicates: [HEALING_PREDICATE],
