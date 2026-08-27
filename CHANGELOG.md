@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+
+## v0.0.9 (2026-08-27)
 - [#11](https://github.com/lblod/app-decide-federating-catalog/pull/11) republish tombstone resources
 
 ## v0.0.8 (2026-08-20)
