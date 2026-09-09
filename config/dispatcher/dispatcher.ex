@@ -78,7 +78,7 @@ defmodule Dispatcher do
   ###############
   # DCAT
   ###############
-  # NOTE (12/06/2026): Th is rule ensures requests for the `/dcat` route that
+  # NOTE (12/06/2026): This rule ensures requests for the `/dcat` route that
   # have `text/html` as accept-header are forwarded to the frontend instead of
   # the service.  Otherwise, requests meant for the frontend are matched by the
   # rule below and incorrectly forwarded to the service.  The prioritisation is
