@@ -1,6 +1,10 @@
 # Changelog
 ## Unreleased
 
+## v0.0.10 (2026-09-09)
+- Add `dcat:landingPage` to the DCAT Data Service resource
+- Bump DCAT frontend to v0.0.12
+
 ## v0.0.9 (2026-08-27)
 - [#11](https://github.com/lblod/app-decide-federating-catalog/pull/11) republish tombstone resources
 
