@@ -1,6 +1,9 @@
 # Changelog
 ## Unreleased
 
+## v0.0.11 (2026-09-10)
+- Bump DCAT frontend to latest version (See [PR](https://github.com/lblod/frontend-decide-dcat/pull/8)))
+
 ## v0.0.10 (2026-09-09)
 - Add `dcat:landingPage` to the DCAT Data Service resource
 - Bump DCAT frontend to v0.0.12
